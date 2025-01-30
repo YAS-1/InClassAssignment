@@ -8,7 +8,7 @@ const users = "users.json";
 // Loading the file information
 const LoadFile  = () =>{
     if(!fs.existsSync(users)){
-        return `File empty`;
+        return {};
     }
     return JSON.parse(fs.readFileSync(users, 'utf8')); // Used to read from the JSON fille storing users
 }
@@ -20,23 +20,22 @@ const SaveUsers = (user) => {
 
 
 // Using readline to create an interface to get user input
-const register = readline.createInterface({
-    input: process.stdin, // for getting input
-    output: process.stdout // for displaying output
-});
+// const register = readline.createInterface({
+//     input: process.stdin, // for getting input
+//     output: process.stdout // for displaying output
+// });
 
-const registerUser = () => {
-    register.question('Enter your name: ', (name) => {
-        register.question('Enter your email: ', (email) => {
+const registerUser = (rl,callback) => {
+    rl.question('Enter your name: ', (name) => {
+        rl.question('Enter your email: ', (email) => {
             let user = LoadFile();
 
             if (user[email]){
-                console.log("User already exists");
-                register.close();
-                return;
+                console.log("\nUser already exists\n");
+                return callback();
             }
 
-            register.question('Enter your password: ', (password) => {
+            rl.question('Enter your password: ', (password) => {
                 //Encrypting the password
                 const hashedPassword = bcrypt.hashSync(password, 10); // hashing the users password
 
@@ -45,12 +44,14 @@ const registerUser = () => {
 
                 SaveUsers(user);
 
-                console.log("Registration Successful");
+                console.log("\nRegistration Successful\n");
 
-                register.close();
+                // register.close();
+
+                callback();
             })
         });
     });
 }
 
-registerUser();
+export {registerUser};

@@ -2,5 +2,17 @@
   "yawe@gmail.com": {
     "name": "Arthur",
     "password": "$2b$10$TN/kf9JzHqhGxMxaTfNVFeSnADQ5T10zG0/dl4OpkafgdIvqsW8iK"
+  },
+  "yas@gmail.com": {
+    "name": "Yawe",
+    "password": "$2b$10$lauhB1XthvkLZtOEKQmPL.xxLOtgS0IhuAxoKHD8KbifnyMRorRcO"
+  },
+  "John@gmail.com": {
+    "name": "John",
+    "password": "$2b$10$ZcYhPRrjiUEIV9qghIDIgO6aKNiLXgz/bGXSXiUY9mIgq5O2WWVjS"
+  },
+  "yawe1@gmail.com": {
+    "name": "YAWE",
+    "password": "$2b$10$6lDkHDu.nKg5N8M7mjkkpe3ixfTtVX4UQcIVgUOiLPH9DJGierLrm"
   }
 }
