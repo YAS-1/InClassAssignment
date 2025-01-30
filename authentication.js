@@ -13,15 +13,9 @@ const LoadFile = () =>{
     return JSON.parse(fs.readFileSync(users, 'utf8'));
 }
 
-// creating interface
-// const Interface = readline.createInterface({
-
-//     input: process.stdin, // to get user input
-//     output: process.stdout // display output
-// });
 
 
-// Menu
+// Menu function
 const userMenu = (rl,email, name, callback) =>{
     console.log(`\nWelcome ${name}\n`)
     console.log(`\n1. View Profile\n`)

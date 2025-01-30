@@ -16,7 +16,7 @@ app.listen(PORT, () =>{
         output: process.stdout
     });
 
-    const MainMenu = () => {
+    const Main = () => {
         console.log("\n---WELCOME---");
         console.log("1. Register");
         console.log("2. Login");
@@ -34,24 +34,24 @@ app.listen(PORT, () =>{
 
             switch(choice){
                 case "1":
-                    registerUser(rl,MainMenu); // Register user and return main menu
+                    registerUser(rl,Main); // Register user and return main menu
                     break;
 
                 case "2":
-                    LoginUser(rl,MainMenu);
+                    LoginUser(rl,Main); // Login option
                     break;
 
                 case "3":
-                    console.log("Existing application...\n");
+                    console.log("Existing application...\n"); //Existing the system
                     rl.close();
                     break;
 
                 default:
                     console.log("Invalid choice. Please try again.");
-                    return MainMenu();
+                    return Main();
             }
         })
     }
 
-    MainMenu();
+    Main();
 })

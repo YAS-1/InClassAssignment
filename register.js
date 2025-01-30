@@ -19,12 +19,6 @@ const SaveUsers = (user) => {
 };
 
 
-// Using readline to create an interface to get user input
-// const register = readline.createInterface({
-//     input: process.stdin, // for getting input
-//     output: process.stdout // for displaying output
-// });
-
 const registerUser = (rl,callback) => {
     rl.question('Enter your name: ', (name) => {
         rl.question('Enter your email: ', (email) => {
